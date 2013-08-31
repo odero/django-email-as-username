@@ -12,9 +12,9 @@ from emailusernames.utils import _email_to_username
 def user_init_patch(self, *args, **kwargs):
     super(User, self).__init__(*args, **kwargs)
     self._username = self.username
-    if self.username == _email_to_username(self.email):
-        # Username should be replaced by email, since the hashes match
-        self.username = self.email
+    # if self.username == _email_to_username(self.email):
+    #    # Username should be replaced by email, since the hashes match
+    #    self.username = self.email
 
 
 def user_save_patch(self, *args, **kwargs):
